@@ -72,9 +72,9 @@ This repository contains firmware and setup instructions to detect magnetic fiel
 
 ```
 Connected to COM4 at 115200 baud
-Hall Sensor State0, AO2735
-Hall Sensor State0, AO2734
-Hall Sensor State0, AO2731
+Hall Sensor State0, AO=2735
+Hall Sensor State0, AO=2734
+Hall Sensor State0, AO=2731
 ...
 Hall Sensor Low Not Detected
 ```
