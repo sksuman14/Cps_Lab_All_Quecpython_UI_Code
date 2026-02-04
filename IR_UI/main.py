@@ -17,7 +17,7 @@ device_state = DeviceState()
 # ─────────────────────────────────────────────
 # UART setup
 
-uart = UART(UART.UART2, 115200, 8, 0, 1, 0)
+uart = UART(UART.UART1, 115200, 8, 0, 1, 0)
 
 def uart_print(msg):
     try:
@@ -37,7 +37,7 @@ def read_ir():
 def data_check(args):
     device_state.IR = read_ir()
     # Parser-friendly output
-    uart_print("IR {}".format(device_state.IR))
+    uart_print(" IR Sensor: Infrared = {}".format(device_state.IR))
 Sensor_timer = osTimer()
 Sensor_timer.start(device_state.SensorInterval, 1, data_check)
 
