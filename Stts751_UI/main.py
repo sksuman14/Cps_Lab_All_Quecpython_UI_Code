@@ -33,7 +33,8 @@ def get_temp_stts751():
     try:
         temp = stts.get_temperature()
         device_state.CurrentTemp = temp
-        uart_print("STTS751: Temperature {} C".format(temp))
+        tempf = temp * 9.0 / 5.0 + 32.0
+        uart_print("STTS751: Temperature: {:.2f} °C | {:.2f} °F".format(device_state.CurrentTemp, tempf))
         return temp
     except Exception as e:
         uart_print("STTS751 read error: {}".format(e))
@@ -49,7 +50,7 @@ def data_check(args):
 # Init I2C + Sensor
 
 i2c_dev = I2C(0, fastmode=True)
-stts = STTS751(i2c_dev, address=0x48)
+stts = STTS751(i2c_dev, address=0x4A)
 
 uart_print("STTS751 initialized")
 
